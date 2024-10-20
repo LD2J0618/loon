@@ -1,0 +1,898 @@
+#!name=毒奶特供(2024年10月20日更新)
+#!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X / Shadowrocket/ loon / Stash/ 油猴 - Tampermonkey ；如去内容农场/泥巴影视/剧迷网/低端影视/哔滴影视/Jable/Missav//Netflav/Xvideos/Pornhub/91../禁漫天堂/百度与谷歌搜索结果页面广告等视频网站广告或其他ACG网站网页广告/百度知道广告...
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1077.png
+
+[Rewrite]
+^https?:\/\/www\.novel543\.com\/log\/ad\.html - reject
+^https?:\/\/stat\.gn01\.top\/js\/script\.js - reject
+^https?:\/\/adc\.tamedia\.com\.tw\/rmadp/static/js/gm-sdk8-mobile\.js - reject
+^https?:\/\/.*?.gliacloud.com.*?www\.novel543\..* - reject
+^https?:\/\/cdn\.holmesmind\.com\/js\/init\.js - reject
+# hitomi.la
+js\.wpadmngr\.com\/static\/adManager\.js - reject
+# javday.tv
+^https?:\/\/[-a-z]{6,}\.com?\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$ - reject
+# njav.tv
+*.tv/ad/ - reject
+# hltv
+hltv-tracking\.js - reject
+# missav 播放页弹窗
+https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} - reject
+# Avple 弹窗跳转
+^https?:\/\/assert\.avple\.tv\/file\/avple-images\/ad\.js - reject
+# Pornhub 跳转
+(^https?:\/\/www\.pornhub\.com)(.*) https://cn.pornhub.com$2 307
+# Pornhub 视频广告
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
+# javlibrary 弹窗
+jbnnr_huath_2.js - reject
+jbnnr_mmdaohang_2.js - reject
+jbnnr_yueyupp_3.js - reject
+bnnr_gojapan - reject
+^https?:\/\/www\.javlibrary\.com\/img\/.*\.gif https://www.javlibrary.com/favicon.ico 307
+# javlibrary 跳转
+(https://www.javlibrary.com/cn/videoreviews.php\?v=)(.*?)(&mode=.*) https://www.javlibrary.com/cn/?v=$2 307
+# Xvideos JS abort
+^https?:\/\/.*\/js\/static\/header\/sda\/ppsuma*.js - reject
+# javmost 播放页弹窗广告
+^https:\/\/suzihaza\.com\/asset\/jquery\/slim-3\.2\.min\.js.* - reject
+# Netflav 播放页弹窗广告
+filemoon\.sx.*/js/baf.js - reject
+^https:\/\/mmfl02\.com\/assets\/jquery\/p2adult\.js.* - reject
+^https:\/\/mmfl02\.com\/.*?\&ads - reject
+# Nivod4 广告插入页
+https://api.nivodz.com/commercial/incr/WEB/3.2?_ts=1697870082522 - reject
+https://api.nivodz.com/commercial/incr/WEB/3.2?_ts=1697870082520 - reject
+# Supjav 
+https://a.realsrv.com/ad-provider.js - reject
+https://help.fanza.cc/* - reject
+https://creative.xlivrdr.com/widgets/Spot/lib.js - reject
+https://static.adxadserv.com/js/adb.js - reject
+https://creative.xlivrdr.com/widgets/v4/Universal?tag - reject
+https://goesdeedinsensitive.com/bd/0d/e2/*.js - reject
+https://streamwish.com/.*ads.js - reject
+/assets/jquery/main100.js? - reject
+# rouman5
+https://rouman5.com/_next/static/chunks/pages/home-8ff6090a1203a289.js - reject
+https://mc.yandex.ru/metrika/tag.js - reject
+https://cdn.tsyndicate.com/sdk/v1/master.spot.js - reject
+https://poweredby.jads.co/js/jads.js - reject
+https://a.magsrv.com/ad-provider.js - reject
+https://ra7.xyz/z/.*/code.js - reject
+# 禁知乎网页广告
+https://(www|zhuanlan)\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
+https://(www|zhuanlan)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
+#https://(www|zhuanlan)\.zhihu\.com/api/v4/hot_recommendation - reject
+https://(www|zhuanlan)\.zhihu\.com/commercial_api/banners_v3/(mobile_banner|mobile_question) - reject
+https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
+# missav 直播跳出广告
+https://creative.live.missav.com/widgets/Spot/lib.js - reject
+^https?:\/\/(www\.xvideos)(\.)(\w{0,3})(?!(.*(api|cdn-cgi|\.))).* header-replace Content-Security-Policy *
+
+[Rule]
+##### www.hltv.org
+DOMAIN-SUFFIX,my.rtmark.net, PROXY
+DOMAIN-SUFFIX,vntsm.com, PROXY
+DOMAIN-SUFFIX,pagead2.googlesyndication.com, PROXY
+
+##### streamtape.com
+DOMAIN-SUFFIX,tj.orlandowaggons.com, PROXY
+DOMAIN-SUFFIX,citadelpathstatue.com, PROXY
+DOMAIN-SUFFIX,a.adforcast.com, PROXY
+DOMAIN-SUFFIX,impolo.com, PROXY
+
+##### ww7.pornhoarder.tv
+DOMAIN-SUFFIX,578d72001a.com, PROXY
+DOMAIN-SUFFIX,wpadmngr.com, PROXY
+DOMAIN-SUFFIX,cdn.tsyndicate.com, PROXY
+DOMAIN-SUFFIX,youradexchange.com, PROXY
+DOMAIN-SUFFIX,zprofuqkssny.com, PROXY
+DOMAIN-SUFFIX,vjugz.com, PROXY
+DOMAIN-SUFFIX,du0pud0sdlmzf.cloudfront.net, PROXY
+DOMAIN-SUFFIX,cdn.tsyndicate.com, PROXY
+
+##### m.po18vip.com 
+DOMAIN-SUFFIX,histats.com, PROXY
+DOMAIN-SUFFIX,kkjhgfds.top, PROXY
+
+##### https://m.diyibanzhu.me/ 第一版主小说网
+DOMAIN,25e87c0802f91cf8cgg.6uzxtlv.cn, PROXY
+DOMAIN-SUFFIX,5mgrgsc.cn, PROXY
+DOMAIN-SUFFIX,2700.5mgrgsc.cn, PROXY
+DOMAIN-SUFFIX,6fi3bv9.cn, PROXY
+DOMAIN-SUFFIX,6uzxtlv.cn, PROXY
+DOMAIN-SUFFIX,xn--qrq171dxpq.com, PROXY
+DOMAIN-SUFFIX,clarity.ms, PROXY
+DOMAIN-SUFFIX,histats.com, PROXY
+DOMAIN-SUFFIX,5e87c0802f91cf8cgg.6uzxtlv.cn, PROXY
+
+##### https://www.novel543.com/ 小说网
+DOMAIN-SUFFIX,popin.cc, PROXY
+DOMAIN-SUFFIX,double.net, PROXY
+DOMAIN-SUFFIX,spotxchange.com, PROXY
+DOMAIN-SUFFIX,stat.gn01.top, PROXY
+DOMAIN-SUFFIX,ad.vidverto.io, PROXY
+DOMAIN-SUFFIX,googlesyndication.com, PROXY
+DOMAIN-SUFFIX,pagead2.googlesyndication.com, PROXY
+DOMAIN-SUFFIX,gn01.top, PROXY
+DOMAIN-SUFFIX,b1sync.zemanta.com, PROXY
+
+##### https://www.lyxsjmm.com/
+DOMAIN-SUFFIX,tu.xasnjafnvn.com, PROXY
+DOMAIN-SUFFIX,bn.ufitjvn.com, PROXY
+
+##### https://javmost.xyz/  
+#DOMAIN,delivery-node-aziz.voe-network.net, PROXY
+#DOMAIN,inspiringaccurate.com, PROXY
+#DOMAIN,track.aso1.net, PROXY
+DOMAIN-SUFFIX,v3.fstats.xyz, PROXY
+DOMAIN-SUFFIX,wpadmngr.com, PROXY
+DOMAIN-SUFFIX,histats.com, PROXY
+DOMAIN-SUFFIX,son-in-lawmorbid.com, PROXY
+DOMAIN-SUFFIX,mc.yandex.ru, PROXY
+DOMAIN-SUFFIX,amung.us, PROXY
+DOMAIN-SUFFIX,widgets.amung.us, PROXY
+DOMAIN-SUFFIX,s10.histats.com, PROXY
+DOMAIN-SUFFIX,eyebrowscrambledlater.com, PROXY
+DOMAIN-SUFFIX,a.realsrv.com, PROXY
+DOMAIN-SUFFIX,media.aso1.net, PROXY
+DOMAIN-SUFFIX,js.wpshsdk.com, PROXY
+DOMAIN-SUFFIX,js.wpushsdk.com, PROXY
+DOMAIN-SUFFIX,9e77b6e6e2.2e3f31faae.com, PROXY
+DOMAIN-SUFFIX,playersb.com, PROXY
+#DOMAIN-SUFFIX,dood.la, PROXY
+
+##### https://www.tvc.cc/  
+DOMAIN-SUFFIX,42yenxh.cn, PROXY
+DOMAIN-SUFFIX,dwyhup.cn, PROXY
+DOMAIN-SUFFIX,netdjs.net, PROXY
+DOMAIN-SUFFIX,pc.stgowan.com, PROXY
+
+##### https://avple.tv/  
+DOMAIN-SUFFIX,tapioni.com, PROXY
+#DOMAIN-SUFFIX,107iwh.cn:4032, PROXY
+#DOMAIN-SUFFIX,qinhemuye.com:443, PROXY
+DOMAIN-SUFFIX,107iwh.cn, PROXY
+DOMAIN-SUFFIX,hbhuatie.com, PROXY
+DOMAIN-SUFFIX,qinzhihao.com, PROXY
+DOMAIN-SUFFIX,nby360.com, PROXY
+DOMAIN-SUFFIX,tfosrv.com, PROXY
+DOMAIN-SUFFIX,trafforsrv.com, PROXY
+DOMAIN-SUFFIX,trafficforce.com, PROXY
+DOMAIN-SUFFIX,s.csyfe.com, PROXY
+
+##### https://www.tvn.cc/ 韩剧TV  
+DOMAIN-SUFFIX,qw2v.changshuohr.net, PROXY
+DOMAIN-SUFFIX,wss.haoyundmn.com, PROXY
+
+##### missav.com  
+DOMAIN-SUFFIX,video.ktkjmp.com, PROXY
+DOMAIN-SUFFIX,go.myavlive.com, PROXY
+DOMAIN-SUFFIX,gsjln04hd.com, PROXY
+DOMAIN-SUFFIX,creative.myavlive.com, PROXY
+DOMAIN-SUFFIX,creative.live.missav.com, PROXY
+DOMAIN-SUFFIX,cashewsforlife208.com, PROXY
+DOMAIN-SUFFIX,ingest.sentry, PROXY
+DOMAIN-SUFFIX,phloxsub73ulata.com, PROXY
+DOMAIN-SUFFIX,xxxjmp.com, PROXY
+DOMAIN-SUFFIX,pitrespite.com, PROXY
+DOMAIN-SUFFIX,alexametrics.com, PROXY
+DOMAIN-SUFFIX,designslicensedeep.com, PROXY
+DOMAIN-SUFFIX,a.bestcontentfood.top, PROXY
+DOMAIN-SUFFIX,tsyndicate.com, PROXY
+DOMAIN-SUFFIX,cashewsforlife208.com, PROXY
+DOMAIN-SUFFIX,e67repidwnfu7gcha.com, PROXY
+DOMAIN-SUFFIX,mc7clurd09pla4nrtat7ion.com, PROXY
+DOMAIN-SUFFIX,e67repidwnfu7gcha.com, PROXY
+DOMAIN-SUFFIX,wuzbhjpvsf.com, PROXY
+DOMAIN-SUFFIX,a.realsrv.com, PROXY
+
+##### Jable.tv av吃到饱  
+DOMAIN-SUFFIX,a.shukriya90.com, PROXY
+DOMAIN-SUFFIX,a.shukriya90.com, PROXY
+DOMAIN-SUFFIX,creative.xlviirdr.com, PROXY
+DOMAIN-SUFFIX,realsrv.com, PROXY
+DOMAIN-SUFFIX,asewlfjqwlflkew.com, PROXY
+DOMAIN-SUFFIX,uus52.com, PROXY
+DOMAIN-SUFFIX,uus58.com, PROXY
+DOMAIN-SUFFIX,ddmax20.xyz, PROXY
+DOMAIN-SUFFIX,ads.exosrv.com, PROXY
+DOMAIN-KEYWORD,exosrv, PROXY
+DOMAIN-KEYWORD,asewlfjqwlflkew, PROXY
+DOMAIN-SUFFIX,tyrantdb.com, PROXY
+DOMAIN-SUFFIX,adserve.work, PROXY
+
+##### nfmovies.com 奈菲影视  
+DOMAIN-KEYWORD,brushshopy, PROXY
+DOMAIN-KEYWORD,onenews, PROXY
+DOMAIN-SUFFIX,s96.cnzz.com, PROXY
+#DOMAIN-SUFFIX,yabo729.com, PROXY
+
+###### m.pianku.me/ 手机片库网  
+DOMAIN-SUFFIX,xn--3bs795g.zone, PROXY
+DOMAIN-SUFFIX,xn--2qux23c9ziyrq.plus, PROXY
+DOMAIN-SUFFIX,xn--2qux23c9ziyrq.club, PROXY
+DOMAIN-SUFFIX,xn--xhq9mt12cf5v.xn--io0a7i, PROXY
+DOMAIN-SUFFIX,ddmax20.xyz, PROXY
+DOMAIN-SUFFIX,xn--3bs795g.link, PROXY
+DOMAIN-SUFFIX,show.suning.beer, PROXY
+DOMAIN-SUFFIX,www.govshenzhen.cn, PROXY
+DOMAIN-SUFFIX,mm9842.com, PROXY
+DOMAIN-KEYWORD,e2wysbacctt1, PROXY
+#DOMAIN-SUFFIX,streamtape.com, PROXY
+
+##### netflav.com Netflav  
+DOMAIN-SUFFIX,xlvirdr.com, PROXY
+DOMAIN-SUFFIX,media.dalysv.com, PROXY
+DOMAIN-SUFFIX,creative.mnaspm.com, PROXY
+DOMAIN-SUFFIX,go.mnaspm.com, PROXY
+DOMAIN-SUFFIX,solestudious.com, PROXY
+DOMAIN-SUFFIX,enrichyummy.com, PROXY
+DOMAIN-SUFFIX,maphuahin.com, PROXY
+DOMAIN-SUFFIX,ggsfq.com, PROXY
+DOMAIN-SUFFIX,ad.pornimg.xyz, PROXY
+DOMAIN-SUFFIX,yandex.ru, PROXY
+DOMAIN-SUFFIX,awaitcola.com, PROXY
+#DOMAIN-SUFFIX,jsdelivr.net, PROXY
+DOMAIN-SUFFIX,wine-api.net, PROXY
+#DOMAIN-KEYWORD,wixsite.com, PROXY
+DOMAIN-SUFFIX,exosrv.com, PROXY
+DOMAIN-SUFFIX,juicyads.com, PROXY
+#DOMAIN-SUFFIX,wixstatic.com, PROXY
+DOMAIN-SUFFIX,thumb.fvs.io, PROXY
+DOMAIN-SUFFIX,itnuzleafan.com, PROXY
+DOMAIN-SUFFIX,oawhaursaith.com, PROXY
+DOMAIN-SUFFIX,unreshiramor.com, PROXY
+DOMAIN-SUFFIX,regulationprivilegescan.top, PROXY
+DOMAIN-SUFFIX,in-page-push.com, PROXY
+DOMAIN-SUFFIX,farmcrapsubsist.com, PROXY
+
+##### avgle.me  
+DOMAIN-SUFFIX,jads.co, PROXY
+DOMAIN-SUFFIX,adxadserv.com, PROXY
+DOMAIN-SUFFIX,moatads.com, PROXY
+DOMAIN-SUFFIX,juicyads.in, PROXY
+DOMAIN-SUFFIX,dtscout.com, PROXY
+
+##### dilili.tv  
+DOMAIN-SUFFIX,51.la, PROXY
+DOMAIN-SUFFIX,51daeka.com, PROXY
+
+##### www.cocomanhua.com  
+DOMAIN-SUFFIX,exdynsrv.com, PROXY
+#DOMAIN-SUFFIX,cloudfront.net, PROXY
+DOMAIN-SUFFIX,d227cncaprzd7y.cloudfront.net, PROXY
+DOMAIN-SUFFIX,d10lumateci472.cloudfront.net, PROXY
+
+##### m.yhdm.io  
+DOMAIN-SUFFIX,dvzk66.cn, PROXY
+DOMAIN-SUFFIX,pu0glv.cn, PROXY
+
+##### www.porntrex.com/  
+#DOMAIN-SUFFIX,ads.bullionyield.com, PROXY
+
+##### https://www.zhenbuka.com/  
+DOMAIN-KEYWORD,dlads, PROXY
+DOMAIN,dagonghuzhu.com, PROXY
+#DOMAIN-SUFFIX,byteimg.com, PROXY
+DOMAIN-KEYWORD,xxshuyuan, PROXY
+DOMAIN-KEYWORD,haowanyou, PROXY
+DOMAIN-KEYWORD,dat8, PROXY
+DOMAIN-KEYWORD,112wan, PROXY
+DOMAIN-KEYWORD,dfkj8, PROXY
+DOMAIN-KEYWORD,mifengv, PROXY
+DOMAIN-KEYWORD,lieyou, PROXY
+DOMAIN-KEYWORD,789htbet, PROXY
+DOMAIN-KEYWORD,mdapp09, PROXY
+DOMAIN-KEYWORD,juruigj, PROXY
+#DOMAIN-KEYWORD,mmiyue, PROXY
+
+##### pornhub.com  
+DOMAIN-SUFFIX,etahub.com, PROXY
+DOMAIN-SUFFIX,evtubescms.phncdn.com, PROXY
+
+##### www.hptoon.com  
+DOMAIN-SUFFIX,22c.in, PROXY
+DOMAIN-SUFFIX,imgxxx.shunxincar.cn, PROXY
+#DOMAIN-SUFFIX,cc58.oss-cn-beijing.aliyuncs.com, PROXY
+#DOMAIN-SUFFIX,oss-accelerate.aliyuncs.com, PROXY
+DOMAIN-SUFFIX,kk.braincf.com, PROXY
+DOMAIN-SUFFIX,run.haireig.com, PROXY
+DOMAIN-SUFFIX,d.zxptw.cn, PROXY
+DOMAIN-SUFFIX,new.xiongzhangad.com, PROXY
+DOMAIN-SUFFIX,js.users.51.la, PROXY
+DOMAIN-SUFFIX,maxwellsery.com, PROXY
+DOMAIN-SUFFIX,annabelleabe.com, PROXY
+
+##### https://91mjw.com/  
+DOMAIN-SUFFIX,jidukeji.com, PROXY
+DOMAIN-SUFFIX,atmib.com, PROXY
+DOMAIN-SUFFIX,bjzysd.net, PROXY
+DOMAIN-SUFFIX,iycwl.com, PROXY
+DOMAIN-SUFFIX,haoyundm.com, PROXY
+DOMAIN-SUFFIX,qqq123987.site, PROXY
+DOMAIN-SUFFIX,qweewq2021.online, PROXY
+DOMAIN-SUFFIX,qqq123987.site, PROXY
+DOMAIN-SUFFIX,jianxinshanghai.com, PROXY
+DOMAIN-SUFFIX,js.51toubu.com, PROXY
+DOMAIN-SUFFIX,img.hylmxing.com, PROXY
+DOMAIN-SUFFIX,777.000123456789.space, PROXY
+DOMAIN-SUFFIX,bhichong.com, PROXY
+DOMAIN-SUFFIX,tskdfjksldk.sdhsgcj.com, PROXY
+DOMAIN-SUFFIX,haoyuntj.com, PROXY
+
+##### https://m.biquge.com.cn/  
+DOMAIN-SUFFIX,bizhixiang.cn, PROXY
+DOMAIN-SUFFIX,jspassport.ssl.qhimg.com, PROXY
+
+##### https://gimy.tv/ 剧迷tv  
+DOMAIN-SUFFIX,ads.superad.cc, PROXY
+
+##### https://hpjav.tv/ JAVFAN #NSFW  
+DOMAIN-SUFFIX,wpncdn.com, PROXY
+DOMAIN-SUFFIX,exosrv.com, PROXY
+DOMAIN-SUFFIX,jads.co, PROXY
+DOMAIN-KEYWORD,toateeli, PROXY
+DOMAIN-KEYWORD,greenplasticdua, PROXY
+DOMAIN-KEYWORD,bongacash, PROXY
+DOMAIN-KEYWORD,bngpt, PROXY
+DOMAIN-KEYWORD,stunninglover, PROXY
+DOMAIN-KEYWORD,jads, PROXY
+DOMAIN-KEYWORD,trwl1, PROXY
+#DOMAIN-KEYWORD,vidoza, PROXY
+DOMAIN-KEYWORD,o333o, PROXY
+DOMAIN-SUFFIX,ad.pornimg.xyz, PROXY
+
+##### https://javgg.net/  
+DOMAIN-SUFFIX,x2sfa.javgg.eu, PROXY
+DOMAIN-SUFFIX,xd3r.javgg.eu, PROXY
+DOMAIN-SUFFIX,p242.plainwrk.name, PROXY
+
+##### https://www5.javmost.com/  
+DOMAIN-KEYWORD,histats, PROXY
+DOMAIN-KEYWORD,dtscout, PROXY
+DOMAIN-KEYWORD,adform, PROXY
+DOMAIN-KEYWORD,mathtag, PROXY
+DOMAIN-KEYWORD,pagespeed-mod, PROXY
+DOMAIN-KEYWORD,in-page-push, PROXY
+
+##### https://hanime1.me/
+DOMAIN-SUFFIX,impactserving.com, PROXY
+DOMAIN-SUFFIX,addthis.com, PROXY
+DOMAIN-SUFFIX,magsrv.com, PROXY
+DOMAIN-SUFFIX,creative.kbnmnl.com, PROXY
+
+##### https://supjav.com/
+DOMAIN-SUFFIX,adxadserv.com, PROXY
+DOMAIN-SUFFIX,xlivrdr.com, PROXY
+DOMAIN-SUFFIX,fanza.cc, PROXY
+
+#### disqus  
+DOMAIN-SUFFIX,referrer.disqus.com, PROXY
+DOMAIN-SUFFIX,links.services.disqus.com, PROXY
+DOMAIN-SUFFIX,disqusads.com, PROXY
+DOMAIN,glitter.services.disqus.com, PROXY
+DOMAIN,juggler.services.disqus.com, PROXY
+DOMAIN,tempest.services.disqus.com, PROXY
+DOMAIN,mc.viglink.com, PROXY
+DOMAIN,qa.viglink.com, PROXY
+DOMAIN,ns4.viglink.com, PROXY
+DOMAIN,ns2.viglink.com, PROXY
+DOMAIN,ns3.viglink.com, PROXY
+DOMAIN,apicdn.viglink.com, PROXY
+DOMAIN-SUFFIX,cdn.viglink.com, PROXY
+
+#### www.tz659.com  
+DOMAIN,nggfe.fdgem.com, PROXY
+DOMAIN,rthmnj.xyz, PROXY
+DOMAIN-SUFFIX,jknmthwd.xyz, PROXY
+DOMAIN,koprtgh.omhoa.com, PROXY
+DOMAIN,hbftgh.ibjkqnhjwd.xyz, PROXY
+DOMAIN,kmopoer.jkbuymjhp.xyz, PROXY
+DOMAIN,kmef.ikjwmfeds.xyz, PROXY
+DOMAIN,hnrtg.iujkegbpo.xyz, PROXY
+DOMAIN-SUFFIX,tcc.qscvli.com, PROXY
+DOMAIN,fg.knlk2md.cn, PROXY
+DOMAIN,tg.gtlpaj.com, PROXY
+DOMAIN-SUFFIX,gtlpaj.com, PROXY
+DOMAIN-SUFFIX,knlk2md.cn, PROXY
+DOMAIN-SUFFIX,7tad.cn, PROXY
+DOMAIN,tc.vpubmi.com, PROXY
+DOMAIN-SUFFIX,qoiw1xw.cn, PROXY
+DOMAIN-SUFFIX,purpleads.io, PROXY
+
+#### cn1.91short.com
+DOMAIN-SUFFIX,ioacfu.com, PROXY
+
+#### 91porn.com
+#### DOMAIN-SUFFIX,killcovid2021.com, PROXY
+
+#### xiaobaotv.net
+DOMAIN-SUFFIX,onerousethelpictures.com, PROXY
+DOMAIN-SUFFIX,exemptambientcream.com, PROXY
+DOMAIN-SUFFIX,catdomepimyth.com, PROXY
+
+#### javday.tv
+DOMAIN-SUFFIX,farwine.com, PROXY
+
+#### www.ntdm9.com
+DOMAIN-SUFFIX,pc.stgowan.com, PROXY
+DOMAIN-SUFFIX,2xmzazd.cn, PROXY
+DOMAIN-SUFFIX,2qpqwkx.cn, PROXY
+DOMAIN-SUFFIX,server.mch3.com, PROXY
+
+
+
+#### Guard Advertising.list 神机规则
+## 参阅 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list
+
+# Advertising
+# > General
+DOMAIN-KEYWORD,adservice, PROXY
+
+# (0~9)
+# > 51wnl
+DOMAIN,ad.51wnl-cq.com, PROXY
+DOMAIN,adextra.51wnl-cq.com, PROXY
+DOMAIN,log.51wnl-cq.com, PROXY
+DOMAIN,r.51wnl-cq.com, PROXY
+
+# (A)
+# > Apple
+DOMAIN-SUFFIX,iadsdk.apple.com, PROXY
+DOMAIN-SUFFIX,ads.internal.unity3d.com, PROXY
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com, PROXY
+DOMAIN-SUFFIX,unityads.unity3d.com, PROXY
+# --- (Alibaba) ---
+DOMAIN,tunion-api.m.taobao.com, PROXY
+# > YOUKU
+DOMAIN-SUFFIX,atm.youku.com, PROXY
+DOMAIN,ad.mobile.youku.com, PROXY
+DOMAIN,adx.op.cp18.ott.cibntv.net, PROXY
+DOMAIN,iyes.youku.com, PROXY
+DOMAIN,pl.cp31.ott.cibntv.net, PROXY
+# > AMap
+DOMAIN,optimus-ads.amap.com, PROXY
+DOMAIN,optimus-ads.amap.com.w.alikunlun.com, PROXY
+# ------
+# > Autohome
+DOMAIN,adproxy.autohome.com.cn, PROXY
+DOMAIN,rd.autohome.com.cn, PROXY
+DOMAIN,al.autohome.com.cn, PROXY
+DOMAIN,applogapi.autohome.com.cn, PROXY
+DOMAIN,adm0.autoimg.cn, PROXY
+DOMAIN,adm1.autoimg.cn, PROXY
+DOMAIN,adm2.autoimg.cn, PROXY
+DOMAIN,adm3.autoimg.cn, PROXY
+
+# (B)
+# --- (Baidu) ---
+DOMAIN-SUFFIX,duapps.com, PROXY
+DOMAIN-SUFFIX,cpro.baidu.com, PROXY
+DOMAIN-SUFFIX,pos.baidu.com, PROXY
+DOMAIN,afd.baidu.com, PROXY
+DOMAIN,als.baidu.com, PROXY
+DOMAIN,duclick.baidu.com, PROXY
+DOMAIN,mobads.baidu.com, PROXY
+DOMAIN,mobads-logs.baidu.com, PROXY
+DOMAIN,nadvideo2.baidu.com, PROXY
+DOMAIN,nsclick.baidu.com, PROXY
+# > iQIYI
+DOMAIN,t7z.cupid.iqiyi.com, PROXY
+DOMAIN,t7z.cupid.ptqy.gitv.tv, PROXY
+## IP-CIDR,101.227.97.240/32,no-resolve
+## IP-CIDR,101.227.200.11/32,no-resolve
+## IP-CIDR,101.227.200.28/32,no-resolve
+## IP-CIDR,124.192.153.42/32,no-resolve
+# ------
+# > ByteDance
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com, PROXY
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com, PROXY
+DOMAIN,ad.toutiao.com, PROXY
+DOMAIN,dsp.toutiao.com, PROXY
+DOMAIN,pangolin.snssdk.com, PROXY
+# > baicizhan
+DOMAIN,advertise.baicizhan.com, PROXY
+DOMAIN,advertise.baicizhan.org, PROXY
+# > BitAuto
+DOMAIN,adx.yiche.com, PROXY
+DOMAIN,log.ycapp.yiche.com, PROXY
+# > Braze
+DOMAIN-SUFFIX,iad.appboy.com, PROXY
+DOMAIN-SUFFIX,iad-03.appboy.com, PROXY
+DOMAIN-SUFFIX,iad-01.braze.com, PROXY
+DOMAIN-SUFFIX,iad-02.braze.com, PROXY
+DOMAIN-SUFFIX,iad-03.braze.com, PROXY
+DOMAIN-SUFFIX,iad-04.braze.com, PROXY
+DOMAIN-SUFFIX,iad-05.braze.com, PROXY
+DOMAIN-SUFFIX,iad-06.braze.com, PROXY
+DOMAIN-SUFFIX,iad-08.braze.com, PROXY
+
+# (C)
+# > CCTVVideo
+DOMAIN,adstore-index-1252524079.file.myqcloud.com, PROXY
+# > CNTV
+DOMAIN,galaxy.bjcathay.com, PROXY
+DOMAIN,mdrecv.app.cntvwb.cn, PROXY
+DOMAIN,sdapprecv.app.cntvwb.cn, PROXY
+DOMAIN,vdapprecv.app.cntvwb.cn, PROXY
+# > ChinaTelecom
+DOMAIN,ad.21cn.com, PROXY
+DOMAIN,ad.k.21cn.com, PROXY
+DOMAIN,admarket.21cn.com, PROXY
+DOMAIN,adshows.21cn.com, PROXY
+# > Chelaile
+DOMAIN,atrace.chelaile.net.cn, PROXY
+DOMAIN,logs.chelaile.net.cn, PROXY
+# > Camera360
+DOMAIN,dispatcher.360in.com, PROXY
+DOMAIN,ad.360in.com, PROXY
+DOMAIN,exp.360in.com, PROXY
+
+# (D)
+# > Douban
+# AND,((USER-AGENT,Frodo*), (DOMAIN,119.29.29.29)), PROXY
+
+# (G)
+# > Google
+DOMAIN-SUFFIX,doubleclick.net, PROXY
+DOMAIN-SUFFIX,googleadservices.com, PROXY
+DOMAIN-SUFFIX,googleadsserving.cn, PROXY
+DOMAIN-SUFFIX,googlesyndication.com, PROXY
+DOMAIN-SUFFIX,googletagservices.com, PROXY
+DOMAIN,ads.youtube.com, PROXY
+
+# (H)
+# > HunanTV
+DOMAIN-SUFFIX,da.mgtv.com, PROXY
+DOMAIN-SUFFIX,da.hunantv.com, PROXY
+DOMAIN-SUFFIX,log.hunantv.com, PROXY
+DOMAIN-SUFFIX,v2.hunantv.com, PROXY
+# > Hupu
+DOMAIN,adx.hupu.com, PROXY
+DOMAIN,adx-api.hupu.com, PROXY
+DOMAIN,goblin.hupu.com, PROXY
+# > happycast
+DOMAIN,ad.hpplay.cn, PROXY
+DOMAIN,adc.hpplay.cn, PROXY
+DOMAIN,adcdn.hpplay.cn, PROXY
+DOMAIN,adeng.hpplay.cn, PROXY
+DOMAIN,pin.hpplay.cn, PROXY
+DOMAIN,rp.hpplay.cn, PROXY
+DOMAIN,rpt.hpplay.cn, PROXY
+
+# (J)
+# >jxedt
+DOMAIN,richmanapi.jxedt.com, PROXY
+DOMAIN,richmanmain.jxedt.com, PROXY
+DOMAIN,richmanrules.jxedt.com, PROXY
+
+# (K)
+# > Kingsoft
+DOMAIN,ad-stat.ksosoft.com, PROXY
+DOMAIN,img.auction-ads.wpscdn.cn, PROXY
+DOMAIN,counter.kingsoft.com, PROXY
+DOMAIN,counter.ksosoft.com, PROXY
+DOMAIN,minfo.wps.cn, PROXY
+DOMAIN,mobad.ijinshan.com, PROXY
+DOMAIN,ups.ksmobile.net, PROXY
+DOMAIN,ws.ksmobile.net, PROXY
+# > Kuaishou
+DOMAIN-SUFFIX,e.kuaishou.com, PROXY
+DOMAIN,js-ad.a.yximgs.com, PROXY
+
+# (L)
+# > Le
+DOMAIN-SUFFIX,webp2p.letv.com, PROXY
+DOMAIN,ark.letv.com, PROXY
+DOMAIN,emma-414870e223.huodonghezi.com, PROXY
+DOMAIN,g3.letv.com, PROXY
+DOMAIN,n.mark.letv.com, PROXY
+# > LinkWiFi
+DOMAIN,a.wkanx.com, PROXY
+DOMAIN,cwx.lianwangtech.com, PROXY
+DOMAIN,c1wx.lianwangtech.com, PROXY
+
+# (M)
+# > Microsoft
+DOMAIN-SUFFIX,ads.msn.com, PROXY
+DOMAIN-SUFFIX,ads1.msn.com, PROXY
+DOMAIN-SUFFIX,ads2.msn.com, PROXY
+DOMAIN-SUFFIX,bingads.microsoft.com, PROXY
+DOMAIN-SUFFIX,rads.msn.com, PROXY
+DOMAIN,mobileads.msn.com, PROXY
+# > MojiWeather
+DOMAIN,ad.api.moji.com, PROXY
+DOMAIN,adlaunch.moji.com, PROXY
+DOMAIN,ads.mojicdn.com, PROXY
+DOMAIN,v1.log.moji.com, PROXY
+# > MiguVideo
+DOMAIN-SUFFIX,ad.cmvideo.cn, PROXY
+DOMAIN,ggc.cmvideo.cn, PROXY
+DOMAIN,ggic03.miguvideo.com, PROXY
+DOMAIN,ggmk.miguvideo.com, PROXY
+DOMAIN,ggv.cmvideo.cn, PROXY
+DOMAIN,ggx.cmvideo.cn, PROXY
+DOMAIN,ggx03.miguvideo.com, PROXY
+
+# (N)
+# > NetEase
+DOMAIN-SUFFIX,dsp.youdao.com, PROXY
+DOMAIN-SUFFIX,union.youdao.com, PROXY
+DOMAIN,ad.bn.netease.com, PROXY
+DOMAIN,ad.yixin.im, PROXY
+DOMAIN,admusicpic.music.126.net, PROXY
+DOMAIN,g1.163.com, PROXY
+DOMAIN,gorgon.youdao.com, PROXY
+DOMAIN,iad.g.163.com, PROXY
+DOMAIN,iadmat.nosdn.127.net, PROXY
+DOMAIN,iadmusicmat.music.126.net, PROXY
+DOMAIN,iadmusicmatvideo.music.126.net, PROXY
+DOMAIN,impservice.dictapp.youdao.com, PROXY
+DOMAIN,impservice.youdao.com, PROXY
+DOMAIN,n.3g.163.com, PROXY
+DOMAIN,nex.163.com, PROXY
+DOMAIN,yt-adp.nosdn.127.net, PROXY
+DOMAIN,yt-adp.ws.126.net, PROXY
+
+# (P)
+# > PPTV
+DOMAIN,ads.aplus.pptv.com, PROXY
+DOMAIN,ads.aplusapi.pptv.com, PROXY
+DOMAIN,asimgs.pplive.cn, PROXY
+DOMAIN,de.as.pptv.com, PROXY
+# > Photoable
+DOMAIN,regist.fotoable.com, PROXY
+DOMAIN,cdn.adapi.fotoable.com, PROXY
+# > PeanutWiFi
+DOMAIN,adnew.wifi8.com, PROXY
+DOMAIN,adfile.wifi8.com, PROXY
+# > PConline
+DOMAIN,ad-analysis.pconline.com.cn, PROXY
+DOMAIN,iad0ssl.pcauto.com.cn, PROXY
+DOMAIN,iad0ssl.pconline.com.cn, PROXY
+DOMAIN,imgad0.pcauto.com.cn, PROXY
+DOMAIN,imgad0.pconline.com.cn, PROXY
+DOMAIN,ivy.pchouse.com.cn, PROXY
+# > Phoenix New Media
+DOMAIN-SUFFIX,deliver.ifeng.com, PROXY
+DOMAIN,api.newad.ifeng.com, PROXY
+DOMAIN,ifengad.3g.ifeng.com, PROXY
+
+# (Q)
+# > QingTing
+DOMAIN,ad.qingting.fm, PROXY
+DOMAIN,adlaunch.qingting.fm, PROXY
+DOMAIN,ad-cdn.qingting.fm, PROXY
+# > OPPO
+DOMAIN-SUFFIX,ads.oppomobile.com, PROXY
+DOMAIN,adsfs.oppomobile.com, PROXY
+
+# (S)
+# > Sina
+DOMAIN-SUFFIX,alitui.weibo.com, PROXY
+DOMAIN-SUFFIX,beacon.sina.com.cn, PROXY
+DOMAIN,adimg.uve.weibo.com, PROXY
+DOMAIN,adimg.vue.weibo.com, PROXY
+DOMAIN,u1.img.mobile.sina.cn, PROXY
+DOMAIN,sax.sina.com.cn, PROXY
+DOMAIN,saxs.sina.com.cn, PROXY
+DOMAIN,saxn.sina.com.cn, PROXY
+# > SOHU
+DOMAIN-SUFFIX,ad.sohu.com, PROXY
+DOMAIN-SUFFIX,ads.sohu.com, PROXY
+DOMAIN-SUFFIX,aty.sohu.com, PROXY
+DOMAIN,hui.sohu.com, PROXY
+DOMAIN-SUFFIX,pv.sohu.com, PROXY
+# > Snapchat
+DOMAIN,ads.snapchat.com, PROXY
+DOMAIN,adsapi.snapchat.com, PROXY
+# > Skyworth
+DOMAIN-SUFFIX,hoisin.coocaa.com, PROXY
+DOMAIN-SUFFIX,hoisin.coocaatv.com, PROXY
+DOMAIN,data-hoisin.coocaa.com, PROXY
+
+# (T)
+# --- (Tencent) ---
+DOMAIN-SUFFIX,e.qq.com, PROXY
+DOMAIN-SUFFIX,gdt.qq.com, PROXY
+DOMAIN-SUFFIX,l.qq.com, PROXY
+DOMAIN,adsmind.apdcdn.tc.qq.com, PROXY
+DOMAIN,adsmind.gdtimg.com, PROXY
+DOMAIN,adsmind.tc.qq.com, PROXY
+DOMAIN,adsmind.ugdtimg.com, PROXY
+DOMAIN,livep.l.t002.ottcn.com, PROXY
+DOMAIN,pgdt.gtimg.cn, PROXY
+DOMAIN,pgdt.gtimg.com, PROXY
+DOMAIN,pgdt.ugdtimg.com, PROXY
+DOMAIN,splashqqlive.gtimg.com, PROXY
+DOMAIN,wa.gtimg.com, PROXY
+# DOMAIN,wxsnsdy.wxs.qq.com, PROXY
+# DOMAIN,wxsnsdythumb.wxs.qq.com, PROXY
+# > Tencent Music (TME)
+DOMAIN,ad.tencentmusic.com, PROXY
+DOMAIN,adstats.tencentmusic.com, PROXY
+DOMAIN,adserviceretry.kugou.com, PROXY
+DOMAIN,ads.service.kugou.com, PROXY
+DOMAIN,adsfile.bssdlbig.kugou.com, PROXY
+DOMAIN,g.koowo.com, PROXY
+DOMAIN,kgmobilestat.kugou.com, PROXY
+DOMAIN,kgmobilestatbak.kugou.com, PROXY
+DOMAIN,mobilelog.kugou.com, PROXY
+DOMAIN,mobilead.kuwo.cn, PROXY
+DOMAIN,rich.kuwo.cn, PROXY
+DOMAIN,tmead.y.qq.com, PROXY
+DOMAIN,splashimgbssdl.yun.kugou.com, PROXY
+DOMAIN,adsfilebssdlbig.tx.kugou.com, PROXY
+# ------
+# > TongHuaShun
+DOMAIN,adm.10jqka.com.cn, PROXY
+DOMAIN,stat.10jqka.com.cn, PROXY
+# > The Paper
+DOMAIN,admonitor.thepaper.cn, PROXY
+DOMAIN,adpai.thepaper.cn, PROXY
+DOMAIN,imgadpai.thepaper.cn, PROXY
+# > Thunder
+DOMAIN,adsp.xunlei.com, PROXY
+DOMAIN,etl.xlmc.sandai.net, PROXY
+
+# (V)
+# > VariFlight
+DOMAIN,adv-adlog.variflight.com, PROXY
+DOMAIN,adv-ads.variflight.com, PROXY
+DOMAIN,app-ad.variflight.com, PROXY
+# > vivo
+DOMAIN,adlog.vivo.com.cn, PROXY
+DOMAIN,adreq.vivo.com.cn, PROXY
+DOMAIN,ads-marketing-vivofs.vivo.com.cn, PROXY
+DOMAIN,adsdk.vivo.com.cn, PROXY
+DOMAIN,adsstatic.vivo.com.cn, PROXY
+DOMAIN,adxlog.vivo.com.cn, PROXY
+DOMAIN,vcardsdkservice.vivo.com.cn, PROXY
+DOMAIN-KEYWORD,stsdk.vivo.com.cn, PROXY
+DOMAIN-KEYWORD,stsdk.vivoglobal.com, PROXY
+# > Viber
+DOMAIN,ads.viber.com, PROXY
+DOMAIN,ads-d.viber.com, PROXY
+DOMAIN,ads.aws.viber.com, PROXY
+
+# (X)
+# > Ximalaya
+DOMAIN,ad.ximalaya.com, PROXY
+DOMAIN,adbs.ximalaya.com, PROXY
+DOMAIN,adse.ximalaya.com, PROXY
+DOMAIN,adse.wsa.ximalaya.com, PROXY
+DOMAIN,adbehavior.wsa.ximalaya.com, PROXY
+DOMAIN,adbehavior.ximalaya.com, PROXY
+DOMAIN,adsebs.ximalaya.com, PROXY
+DOMAIN,adwbs.ximalaya.com, PROXY
+# > Xiaohongshu
+DOMAIN,ads-img-qc.xhscdn.com, PROXY
+DOMAIN,ads-video-al.xhscdn.com, PROXY
+DOMAIN,ads-video-qc.xhscdn.com, PROXY
+DOMAIN,t-ads.xiaohongshu.com, PROXY
+
+# (Y)
+# > Yahoo
+DOMAIN-SUFFIX,adserver.yahoo.com, PROXY
+DOMAIN-SUFFIX,adspecs.yahoo.com, PROXY
+DOMAIN-SUFFIX,advertising.yahoo.com, PROXY
+DOMAIN-SUFFIX,gemini.yahoo.com, PROXY
+DOMAIN,admarketing.yahoo.net, PROXY
+DOMAIN,ads.auctions.yahoo.com, PROXY
+DOMAIN,ads.finance.yahoo.com, PROXY
+DOMAIN,ads.yahoo.com, PROXY
+DOMAIN,ads.yahoo.de, PROXY
+
+# (Z)
+# > Zhihu
+# USER-AGENT,AVOS*
+DOMAIN,appcloud2.in.zhihu.com, PROXY
+DOMAIN,mqtt.zhihu.com, PROXY
+DOMAIN,sugar.zhihu.com, PROXY
+DOMAIN,118.89.204.198, PROXY
+## IP-CIDR,118.89.204.198/32,no-resolve
+## IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,no-resolve
+# > ZOL
+DOMAIN,apppv.zol.com.cn, PROXY
+DOMAIN,pvnapp.zol.com.cn, PROXY
+
+[Script]
+http-response ^https?:\/\/(zhidao)\.baidu\.com\/(question|index|\?fr|\?word) script-path=https://limbopro.com/Adguard/surge_baidu.zhidao.js, requires-body=true, tag=知道搜索广告(zhidao.baidu.com)
+
+http-response ^https?:\/\/(www|m)\.baidu\.com(/$|\/\?ref.*)(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/surge_baidu.index.js, requires-body=true, tag=搜索首页广告(www.baidu.com)
+
+http-response ^https?:\/\/(www|m)\.baidu\.com(\/s\?word.*|\/from.*?\/s\?word.*|\/from.*?word=.*) script-path=https://limbopro.com/Adguard/surge_baidu.js, requires-body=true, tag=搜索结果广告(www.baidu.com)
+
+http-response ^https?:\/\/((www|cn)\.bing)(\.\w{2,4}){1,2}\/(search\?.*|\?sa=|\?FORM)(?!.*?(apps=)) script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=内容农场(www.bing.com)
+
+http-response ^https?:\/\/(www\.google)(\.\w{2,4}){1,2}\/(search\?|\?sa=|\?FORM)(?!.*?(apps=)) script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=内容农场(www.google.com|com.hk)
+
+http-response ^https?:\/\/18comic\.(vip|org)\/(?!(.*(onclick|cdn-cgi|\.))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=禁漫天堂(18comic.org|vip)
+
+http-response ^https?:\/\/(rouman5\.com)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=肉漫(rouman5)
+
+http-response ^https?:\/\/www\.wnacg\.com\/(?!(.*(onclick|cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=紳士漫畫(www.wnacg.com)
+
+http-response ^https?:\/\/((cnys)\.(tv|com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/cnys.js, requires-body=true, tag=CN影视(cnys.tv)
+
+http-response ^https?:\/\/((xiaobaotv|xiaoxintv)\.(net|com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=小宝影视(xiaobaotv.net)
+
+http-response ^https?:\/\/((www\.iyf)\.(tv|com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=iyf(www.iyf.tv)
+
+http-response ^https?:\/\/(www|m)\.(nivod\d(\.tv|\.com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=泥巴影视(Nivod4.tv)
+
+http-response ^https?:\/\/(\w{0,3}(\.){0,1}(gimy)(\.)\w{0,3})\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=剧迷网(gimy.app|ai)
+
+http-response ^https?:\/\/(ddys|ddrk|ddys2)\.\w{0,3}\/(?!(.*(cdn-cgi|getvddr|\=json|\.))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=低端影视(ddrk.me|ddys.pro)
+
+http-response ^https?:\/\/www\.(btbdys|bdys(01|02|03|10))\.com\/play\/.*?\.htm.* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=哔嘀影视播放页(www.btbdys.com)
+
+http-response ^https?:\/\/www\.(btbdys|bdys(01|02|03|10))\.com\/(?!(.*(obj|lines|verifyCode|member|zzzzz|cdn-cgi|js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=哔嘀影视展示页(www.btbdys.com)
+
+http-response https?:\/\/.+\.olevod\..+\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=欧乐影视(www.olevod.tv)
+
+http-response https?:\/\/.*duboku.*\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=独播库(www.duboku.tv)
+
+http-response ^https?:\/\/(www|wap|m)\.tvn\.cc\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=韩剧TV(www.tvn.cc)
+
+http-response ^https?:\/\/(555dy\w{0,3})\.(com|top|shop)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=555电影网(555dy.com)P.S.鉴于域名经常跳转将不再维护
+
+http-response ^https?:\/\/(www\.|m\.){0,1}libvio\.(top|pro)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=梨播(libvio.top|pro)
+
+http-response ^https?:\/\/(www.ttsp.tv)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=天天视频(www.ttsp.tv)
+
+http-response ^https?:\/\/(hitomi.la)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=工口漫画(hitomi.la)
+
+http-response ^https?:\/\/(www.ntdm9.com)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=NT动漫(www.ntdm9.com)
+
+http-response ^https?:\/\/(www.novel543.com)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=稷下書院(www.novel543.com)
+
+http-response ^https?:\/\/(m\.diyibanzhu\.me)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=第一版主(m.diyibanzhu.me)
+
+http-response ^https?:\/\/(www\.hltv\.org)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=hltv(www.hltv.org)
+
+http-response ^https?:\/\/www\.javbus\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Javbus(www.javbus.com)
+
+http-response ^https?:\/\/(\w{0,3}(\.){0,1}(pornhub)(\.)\w{0,3})\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Pornhub(cn.pornhub.com)
+
+http-response ^https?:\/\/(jable|(en|\w{2,3})\.jable)\.tv\/(?!(.*(\?mode|cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Jable(en|jable.tv)
+
+http-response ^https?:\/\/missav\.com\/(?!(.*(api|cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Missav(missav.com)
+
+http-response ^https?:\/\/javday\.tv\/(?!(.*(api|cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Javday(javday.tv)
+
+http-response ^https?:\/\/www\.xvideos\.com\/(?!(.*(api|my|cdn-cgi|account|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Xvideos(www.xvideos.com)
+
+http-response ^https?:\/\/njav\.tv\/(?!(.*(api|my|cdn-cgi|account|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=njav(njav.com)
+
+http-response ^https?:\/\/(netflav|netflav5)\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/surge_netflav.js, requires-body=true, tag=Netflav(netflav|netflav5|.com)
+
+http-response ^https?:\/\/(streamtape.com|javplayer|((mmsw02|mmfl04|netflavns1|netflavns2|emturbovid|filemoon|embedrise|mmfl02|embedgram)\.(sx|com))|emturbovid\.com|filemoon.sx|embedrise.com|mmfl02.com|embedgram.com|fviplions.com|sfastwish.com|cabecabean.lol|belegug.online|wishfast.top|vidmoviesb.xyz|vhmovies.to|awish.pro|ankrzkz.sbs|fc2stream.tv|sub123.xyz|leakslove.net|mwish.pro|embedwish.com|javhahaha.us|abkrzkz.sbs|streamvid.top|abkrzkr.sbs|playertv.net|sbrity.com|doodporn.xyz|mycloud123.top|streamsb.click|streamxxx.online|trafficdepot.re|sblona.com|filelions.*|ahvsh.com|sbrapid.com|streaamss.com|louishide.com|projectfreetv.lol|streamwish.to|lvturbo.com|javb1.com|sbface.com|rbtstream.info|vidgo.top|sbhight.com|sbbrisk.com|streamhide.to|cloudrls.com|mm9846.com|m4uhd.club|streamm4u.club|sbchill.com|fbjav.com|imfb.xyz|sbrulz.xyz|baldrfilms.xyz|javbigo.xyz|dizivap.*|dvapizle.*|sblongvu.com|mavavid.com|fembed9hd.com|xsub.cc|sbthe.com|sbanh.com|mm9844.*|anigogo.net|faptiti.com|javsubbed.xyz|sblanh.com|av4asia.com|playerjavseen.com|pornhubed.com|xvideostream.net|streamsss.net|sbspeed.com|vcdn-stream.xyz|vanfem.com|javuncen.xyz|vidplay.ch|javenglish.me|ssbstream.net|zojav.com|watch-jav-english.live|javpornhd.online|yuamikami.xyz|embed-media.com|obaplayer.xyz|cdn-myhdjav.info|dlmovies.link|cinegrabber.com|watchjavnow.xyz|luxubu.review|nsfwzone.xyz|viplayer.cc|cinemaemcasa.xyz|sbfast.com|iframe2videos.xyz|javfu.net|streamas.cloud|nashstream.top|yuistream.xyz|jav247.top|viewsb.com|myvideoplayer.monster|cloudemb.com|moviesland.xyz|jvembed.com|ffem.club|javleaked.com|pornhole.club|ndrama.xyz|fembed-hd.com|netflav.com|netflav5.com|mambast.tk|cutl.xyz|playerjavhd.com|mycloudzz.com|suzihaza.com|embedsb.com|layarkacaxxi.icu|nekolink.site|sbflix.xyz|javhdfree.icu|streamsb.net|rubicstreaming.com|javside.com|gdstream.net|animepl.xyz|watchsb.com|sbplay2.*|hentai4.me|playersb.com|streamabc.xyz|ns21.online|diasfem.com|milfnut.net|pelispop.net|ondembed.xyz|tubesb.com|fplayer.info|mm9842.com|sbplay1.com|javmvp.com|japopav.tv|nezuko-ah.nl|pelistop.co|vidcloud.*|mavlecteur.com|xxxjaa.xyz|vcdn2.space|mavplayer.xyz|sbplay.*|sbvideo.net|sbembed4.com|javcl.me|dfmagazine.co.uk|down-paradise.com|embedsito.com|serverf4.org)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/PlayerAds.js, requires-body=true, tag=PlayerAds
+
+http-response ^https?:\/\/\w{0,3}(\.){0,1}91porna\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.91porna.js, requires-body=true, tag=91porna(91porna.com)
+
+http-response ^https?:\/\/\w{0,3}(\.){0,1}91porn\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=91porn(www.91porn.com)
+
+http-response ^https?:\/\/(cn1|www)\.(91short\.com)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=91short(cn1.91short.com)
+
+http-response ^https?:\/\/avple\.tv\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Avple(avple.tv)
+
+http-response ^https?:\/\/(\w{0,3})(\.{0,1})4hu\.tv\/(?!(.*(cdn-cgi|onclick|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=4hu(4hu.tv)
+
+http-response ^https?:\/\/supjav\.com\/(?!(.*(cdn-cgi|api|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=Supjav(supjav.com)
+
+http-response ^http?:\/\/www\.tz659\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=tz659(www.tz659.com)
+
+http-response ^https?:\/\/anime1\.me\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=anime1(anime1.me)
+
+http-response ^https?:\/\/hanime1\.me\/(?!(.*(api|cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=hanime1(hanime1.me)
+
+http-response ^https?:\/\/m\.yhpdm\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=yhdmp(m.yhdmp.com)
+
+http-response ^https?:\/\/\w{3,5}\.javmost\.com\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/surge_javmost.js, requires-body=true, tag=Javmost(javmost.xyz)
+
+http-response ^https?:\/\/(www.tameikegoro.jp|tameikegoro.jp|www.madonna-av.com|madonna-av.com|deeps.net|www.fitch-av.com|fitch-av.com|www.takara-tv.jp|takara-tv.jp|www.moodyz.com|moodyz.com|www.s1s1s1.com|s1s1s1.com|www.prestige-av.com|prestige-av.com|www.sod.co.jp|sod.co.jp|venus-av.com|www.gloryquest.tv|gloryquest.tv|www.premium-beauty.com|premium-beauty.com|www.nagae-style.com|nagae-style.com|www.ideapocket.com|ideapocket.com|www.attackers.net|attackers.net|www.dasdas.jp|dasdas.jp|www.oppai-av.com|oppai-av.com|www.kawaiikawaii.jp|kawaiikawaii.jp|www.to-satsu.com|to-satsu.com|www.wanz-factory.com|wanz-factory.com|www.av-e-body.com|av-e-body.com|www.mgstage.com|mgstage.com|www.mousouzoku-av.com|mousouzoku-av.com|manji-group.com|www.rocket-inc.net|rocket-inc.net|www.dmm.co.jp|dmm.co.jp|www.muku.tv|muku.tv)\/(?!(.*(api|my|cdn-cgi|account|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* script-path=https://limbopro.com/Adguard/Adblock4limbo.js, requires-body=true, tag=AVfactory
+
+[MITM]
+hostname = joyous-battle.com, javplayer.me, www.iyf.tv, js.wpadmngr.com, hitomi.la, www.hltv.org, *.cdn77.org, m.diyibanzhu.me, 91porna.com, cdn.holmesmind.com, *.gliacloud.com, adc.tamedia.com.tw, www.novel543.com, stat.gn01.top, ra7.xyz, a.magsrv.com, poweredby.jads.co, cdn.tsyndicate.com, mc.yandex.ru, rouman5.com, cnys.tv, xiaoxintv.net, www.ntdm9.com, www.olevod.tv, www.tameikegoro.jp, tameikegoro.jp, www.madonna-av.com, madonna-av.com, deeps.net, www.fitch-av.com, fitch-av.com, www.takara-tv.jp, takara-tv.jp, www.moodyz.com, moodyz.com, www.s1s1s1.com, s1s1s1.com, www.prestige-av.com, prestige-av.com, www.sod.co.jp, sod.co.jp, venus-av.com, www.gloryquest.tv, gloryquest.tv, www.premium-beauty.com, premium-beauty.com, www.nagae-style.com, nagae-style.com, www.ideapocket.com, ideapocket.com, www.attackers.net, attackers.net, www.dasdas.jp, dasdas.jp, www.oppai-av.com, oppai-av.com, www.kawaiikawaii.jp, kawaiikawaii.jp, www.to-satsu.com, to-satsu.com, www.wanz-factory.com, wanz-factory.com, www.av-e-body.com, av-e-body.com, www.mgstage.com, mgstage.com, www.mousouzoku-av.com, mousouzoku-av.com, manji-group.com, www.rocket-inc.net, rocket-inc.net, www.dmm.co.jp, dmm.co.jp, www.muku.tv, muku.tv, streamtape.com, fviplions.com, sfastwish.com, cabecabean.lol, belegug.online, wishfast.top, vidmoviesb.xyz, vhmovies.to, awish.pro, ankrzkz.sbs, fc2stream.tv, sub123.xyz, leakslove.net, mwish.pro, embedwish.com, javhahaha.us, abkrzkz.sbs, streamvid.top, abkrzkr.sbs, playertv.net, sbrity.com, doodporn.xyz, mycloud123.top, streamsb.click, streamxxx.online, trafficdepot.re, sblona.com, filelions.*, ahvsh.com, sbrapid.com, streaamss.com, louishide.com, projectfreetv.lol, streamwish.to, lvturbo.com, javb1.com, sbface.com, rbtstream.info, vidgo.top, sbhight.com, sbbrisk.com, streamhide.to, cloudrls.com, mm9846.com, m4uhd.club, streamm4u.club, sbchill.com, fbjav.com, imfb.xyz, sbrulz.xyz, baldrfilms.xyz, javbigo.xyz, dizivap.*, dvapizle.*, sblongvu.com, mavavid.com, fembed9hd.com, xsub.cc, sbthe.com, sbanh.com, mm9844.*, anigogo.net, faptiti.com, javsubbed.xyz, sblanh.com, av4asia.com, playerjavseen.com, pornhubed.com, xvideostream.net, streamsss.net, sbspeed.com, vcdn-stream.xyz, vanfem.com, javuncen.xyz, vidplay.ch, javenglish.me, ssbstream.net, zojav.com, watch-jav-english.live, javpornhd.online, yuamikami.xyz, embed-media.com, obaplayer.xyz, cdn-myhdjav.info, dlmovies.link, cinegrabber.com, watchjavnow.xyz, luxubu.review, nsfwzone.xyz, viplayer.cc, cinemaemcasa.xyz, sbfast.com, iframe2videos.xyz, javfu.net, streamas.cloud, nashstream.top, yuistream.xyz, jav247.top, viewsb.com, myvideoplayer.monster, cloudemb.com, moviesland.xyz, jvembed.com, ffem.club, javleaked.com, pornhole.club, ndrama.xyz, fembed-hd.com, netflav.com, netflav5.com, mambast.tk, cutl.xyz, playerjavhd.com, mycloudzz.com, suzihaza.com, embedsb.com, layarkacaxxi.icu, nekolink.site, sbflix.xyz, javhdfree.icu, streamsb.net, rubicstreaming.com, javside.com, gdstream.net, animepl.xyz, watchsb.com, sbplay2.*, hentai4.me, playersb.com, streamabc.xyz, ns21.online, diasfem.com, milfnut.net, pelispop.net, ondembed.xyz, tubesb.com, fplayer.info, mm9842.com, sbplay1.com, javmvp.com, japopav.tv, nezuko-ah.nl, pelistop.co, vidcloud.*, mavlecteur.com, xxxjaa.xyz, vcdn2.space, mavplayer.xyz, sbplay.*, sbvideo.net, sbembed4.com, javcl.me, dfmagazine.co.uk, down-paradise.com, embedsito.com, serverf4.org, streamwish.com, mmsw02.com, mmfl04.com, netflavns1.com, netflavns2.com, emturbovid.com, static.adxadserv.com, ak.oneegrou.net, goesdeedinsensitive.com, help.fanza.cc, a.realsrv.com, creative.xlivrdr.com, www.javlibrary.com, njav.tv, hanime1.me, 555dy.shop, 555dyx5.com, 555dyx4.com, 555dyx3.com, 555dyx1.com, supjav.com, embedgram.com, mmfl02.com, embedrise.com, filemoon.sx, static-cdn77.xvideos-cdn.com, www.xvideos.com, javday.tv, xiaobaotv.net, cn1.91short.com, vthumb.killcovid2021.com, img.killcovid2021.com, m.nivod5.com, www.nivod5.com, api.nivodz.com, m.nivod4.tv, m.nivod8.tv, m.nivod9.tv, m.nivod*.tv, www.nivod8.tv, www.nivod*.tv, www.nivod9.tv, www.nivod4.tv, m.yhpdm.com, m.yhdmp.cc, m.yhdmp.com, anime1.me, www.tz659.com, www.ttsp.tv, *.cloudfront.net, www.o8tv.com, www.555dd*.com, www.5dy*, *.tvn.cc, www.wnacg.com, www.wnacg.org, www.91porn.com, 91porn.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, cn.bing.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, *.jable.tv, en.jable.tv, jable.tv, wwww.tvn.cc, m.tvn.cc, wap.tvn.cc, ddrk.me, ddys.pro, ddys.tv, ddys.art, ddys2.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, www.pornhub.com, cn.pornhub.com, missav.com, www.libvio.top, www.libvio.pro, www.libvio.com, www.libvio.la, *.4hu.*, gimy.ai, gimy.tv, *.duboku.*, assert.avple.tv, avple.tv, *.btbdys.*, www.bdys01.com, www.bdys02.com, www.bdys03.com, www.bdys10.com, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com
