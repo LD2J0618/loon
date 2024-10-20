@@ -6,7 +6,9 @@
 # 本插件采用[https://github.com/luestr]及[https://github.com/blackmatrix7]等大佬提供的代码，纯纯的缝合怪
 
 [Rule]
-#广告过滤
+# 屏蔽443端口
+AND,((DOMAIN-KEYWORD,wechat),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC))),(DEST-PORT,443)),REJECT
+# 广告过滤
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
 
 # WeChat用户请走代理，微信用户直连
