@@ -1,6 +1,6 @@
 #!name=网页去广告
 #!desc=毒奶去网页广告计划（稳定版）LD2J For loon；如去内容农场/泥巴影视/剧迷网/低端影视/哔滴影视/Jable/Missav//Netflav/Xvideos/Pornhub/91../禁漫天堂/百度与谷歌搜索结果页面广告等视频网站广告或其他ACG网站网页广告/百度知道广告...
-#!icon = https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/myblockads.png
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/RemoveAds.png
 
 [Rewrite]
 ^https?:\/\/www\.novel543\.com\/log\/ad\.html - reject
