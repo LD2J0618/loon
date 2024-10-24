@@ -8,33 +8,6 @@
 # > 腾讯
 # refer: https://www.dnspod.cn/products/publicdns
 *.tencent.com = server:https://doh.pub/dns-query
-# 腾讯云
-*.qcloud.com = server:https://doh.pub/dns-query
-# 腾讯云CDN
-*.qcloudcdn.cn = server:https://doh.pub/dns-query
-*.qcloudcdn.com = server:https://doh.pub/dns-query
-# 腾讯云对象储存
-*.qcloudcos.com = server:https://doh.pub/dns-query
-# 腾讯云静态资源
-*.qcloudimg.com = server:https://doh.pub/dns-query
-# 腾讯云超级管家
-*.qcloudcjgj.com = server:https://doh.pub/dns-query
-# 腾讯云网站管家
-*.qcloudwzgj.com = server:https://doh.pub/dns-query
-# 腾讯云主页管家
-*.qcloudzygj.com = server:https://doh.pub/dns-query
-# 腾讯开放云
-*.myqcloud.com = server:https://doh.pub/dns-query
-# 腾讯云
-*.tencent-cloud.net = server:https://doh.pub/dns-query
-# 腾讯云aiot解决方案
-*.tencentcloud-aiot.com = server:https://doh.pub/dns-query
-# 腾讯云API
-*.tencentcloudapi.com = server:https://doh.pub/dns-query
-# 腾讯云容器镜像服务TCR
-*.tencentcloudcr.com = server:https://doh.pub/dns-query
-# 腾讯云云市场
-*.tencentcloudmarket.com = server:https://doh.pub/dns-query
 # QQ
 *.qq.com = server:https://doh.pub/dns-query
 # 腾讯头像
