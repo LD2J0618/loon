@@ -5,7 +5,6 @@
 #!homepage=https://github.com/DualSubs
 #!manual=https://github.com/DualSubs/Spotify/wiki/🍿-DualSubs:-🎵-Spotify
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
-#!category=🍿️ DualSubs
 
 [rule]
 DOMAIN,audio4-ak-spotify-com.akamaized.net, PROXY
@@ -39,17 +38,22 @@ USER-AGENT,Spotify*, PROXY
 IP-CIDR,104.154.127.126/32,no-resolve, PROXY
 IP-CIDR,35.186.224.47/32,no-resolve, PROXY
 
+[Argument]
+Types = input,"Translate,External",tag=[歌词]启用类型（多选）,desc=请选择要添加的歌词选项，如果为多选，则会自动决定提供的歌词类型。
+Vendor = select,"Google","Microsoft",tag=[翻译器]服务商API,desc=请选择翻译器所使用的服务商API，更多翻译选项请使用BoxJs。
+LrcVendor = select,"NeteaseMusic","QQMusic","NeteaseMusicNodeJS",tag=[歌词]服务商API,desc=请选择外部源所使用的服务商API。
+
 [Script]
-http-response ^https?:\/\/api\.spotify\.com\/v1\/tracks\? requires-body=1, script-path=https://raw.githubusercontent.com/DualSubs/Spotify/main/js/Spotify.response.js, tag=DualSubs.Spotify.Tracks.response.json
+http-response ^https?:\/\/api\.spotify\.com\/v1\/tracks\? requires-body=1, script-path=https://github.com/DualSubs/Spotify/releases/download/v1.9.1/response.bundle.js, tag=DualSubs.Spotify.Tracks.response.json, argument=[{Types},{Vendor},{LrcVendor}]
 
-http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json requires-body=1, script-path=https://raw.githubusercontent.com/DualSubs/Spotify/main/js/Spotify.request.js, tag=DualSubs.Spotify.Lyrics.request.json
-http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*) requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/DualSubs/Spotify/main/js/Spotify.request.js, tag=DualSubs.Spotify.Lyrics.request.proto
+http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json requires-body=1, script-path=https://github.com/DualSubs/Spotify/releases/download/v1.9.1/request.bundle.js, tag=DualSubs.Spotify.Lyrics.request.json, argument=[{Types},{Vendor},{LrcVendor}]
+http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*) requires-body=1, binary-body-mode=1, script-path=https://github.com/DualSubs/Spotify/releases/download/v1.9.1/request.bundle.js, tag=DualSubs.Spotify.Lyrics.request.proto, argument=[{Types},{Vendor},{LrcVendor}]
 
-http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=Translate requires-body=1, script-path=https://raw.githubusercontent.com/DualSubs/Universal/main/js/Translate.response.js, tag=DualSubs.Spotify.Translate.Lyrics.response.json
-http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=Translate requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/DualSubs/Universal/main/js/Translate.response.js, tag=DualSubs.Spotify.Translate.Lyrics.response.proto
+http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=Translate requires-body=1, script-path=https://github.com/DualSubs/Universal/releases/latest/download/Translate.response.bundle.js, tag=DualSubs.Spotify.Translate.Lyrics.response.json, argument=[{Types},{Vendor},{LrcVendor}]
+http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=Translate requires-body=1, binary-body-mode=1, script-path=https://github.com/DualSubs/Universal/releases/latest/download/Translate.response.bundle.js, tag=DualSubs.Spotify.Translate.Lyrics.response.proto, argument=[{Types},{Vendor},{LrcVendor}]
 
-http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=External requires-body=1, script-path=https://raw.githubusercontent.com/DualSubs/Universal/main/js/External.Lyrics.response.js, tag=DualSubs.Spotify.External.Lyrics.response.json
-http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=External requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/DualSubs/Universal/main/js/External.Lyrics.response.js, tag=DualSubs.Spotify.External.Lyrics.response.proto
+http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json(.*)subtype=External requires-body=1, script-path=https://github.com/DualSubs/Universal/releases/latest/download/External.Lyrics.response.bundle.js, tag=DualSubs.Spotify.External.Lyrics.response.json, argument=[{Types},{Vendor},{LrcVendor}]
+http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=External requires-body=1, binary-body-mode=1, script-path=https://github.com/DualSubs/Universal/releases/latest/download/External.Lyrics.response.bundle.js, tag=DualSubs.Spotify.External.Lyrics.response.proto, argument=[{Types},{Vendor},{LrcVendor}]
 
 [MITM]
 hostname = api.spotify.com, spclient.wg.spotify.com
