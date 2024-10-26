@@ -44,6 +44,8 @@ AND,((DOMAIN-KEYWORD,wechat),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC))),(DEST-PORT,44
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
 # WeChatpay
 DOMAIN-KEYWORD,wechatpay,DIRECT
+DOMAIN,epay.ahrcu.com,DIRECT
+DOMAIN,mixpay.wechat.com,DIRECT  
 # WeChat代理
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net, PROXY
 DOMAIN,btrace.qq.com, PROXY
@@ -59,13 +61,12 @@ DOMAIN-SUFFIX,map.qq.com, PROXY
 DOMAIN-SUFFIX,qlogo.cn, PROXY
 DOMAIN-SUFFIX,qpic.cn, PROXY
 DOMAIN-SUFFIX,servicewechat.com, PROXY
-DOMAIN-SUFFIX,tenpay.com, PROXY
+DOMAIN-SUFFIX,tenpay.com, DIRECT
 DOMAIN-SUFFIX,up-hl.3g.qq.com, PROXY
 DOMAIN-SUFFIX,vweixinthumb.tc.qq.com, PROXY
 DOMAIN-SUFFIX,wechat.com, PROXY
 DOMAIN-SUFFIX,wechatlegal.net, PROXY
 DOMAIN-SUFFIX,wechatos.net, PROXY
-DOMAIN-SUFFIX,wechatpay.com, PROXY
 DOMAIN-SUFFIX,weixin.com, PROXY
 DOMAIN-SUFFIX,weixin.qq.com, PROXY
 DOMAIN-SUFFIX,weixinbridge.com, PROXY
