@@ -42,8 +42,9 @@ url.cn = server:https://doh.pub/dns-query
 AND,((DOMAIN-KEYWORD,wechat),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC))),(DEST-PORT,443)),REJECT
 # 广告过滤
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
-
-# WeChat用户请走代理，微信用户直连
+# WeChatpay
+DOMAIN-KEYWORD,wechatpay,DIRECT
+# WeChat代理
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net, PROXY
 DOMAIN,btrace.qq.com, PROXY
 DOMAIN,dldir1.qq.com, PROXY
