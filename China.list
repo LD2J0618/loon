@@ -1,6 +1,8 @@
 # https://github.com/LD2J0618/loon/edit/main/China.list
 # GEOIP
 GEOIP, cn
+# 腾讯游戏
+DOMAIN-KEYWORD,cdn.jkmobile.qq.com
 # China
 DOMAIN-SUFFIX,cn
 DOMAIN-SUFFIX,ms
