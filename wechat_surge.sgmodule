@@ -73,7 +73,7 @@ DOMAIN-SUFFIX,wxs.qq.com, WeChat
 DOMAIN-SUFFIX,yun-hl.3g.qq.com, WeChat
 USER-AGENT,MicroMessenger*, WeChat
 USER-AGENT,WeChat*, WeChat
-IP-ASN,132203,no-resolve, WeChat
+IP-ASN,132203, WeChat, no-resolve
 
 # 微信小程序通用规则
 DOMAIN, wxsnsdy.wxs.qq.com, REJECT
