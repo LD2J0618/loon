@@ -1,11 +1,13 @@
 # https://github.com/LD2J0618/loon/edit/main/China.list
 # GEOIP
 GEOIP, cn
+# 完美世界对战平台
+DOMAIN-KEYWORD,wmpvp
 # 腾讯游戏
 DOMAIN-KEYWORD,cdn.jkmobile.qq.com
 # emby
-DOMAIN-KEYWORD,cf.bili.rip
-DOMAIN-KEYWORD,hxd.as.174.com
+DOMAIN,cf.bili.rip
+DOMAIN,hxd.as.174.com
 # China
 DOMAIN-SUFFIX,cn
 DOMAIN-SUFFIX,ms
