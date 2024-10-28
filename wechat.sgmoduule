@@ -5,6 +5,7 @@
 #!author = ld2j[https://github.com/LD2J0618],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],VirgilClyne
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weixin.png
 #!arguments=Proxy:你的策略组
+#!arguments-desc=Proxy:选择策略组，将微信&WeChat相关域名分流
 
 [host]
 # > 腾讯
