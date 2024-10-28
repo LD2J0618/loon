@@ -2,7 +2,7 @@
 #!desc = DNS分流，内置WeChat分流，广告过滤(更新时间2024/10/29)，
 #!更新内容：新增小程序去广告（作者署名在插件内）,过滤微信公众号广告,对支付相关域名取直连处理
 #!openUrl = https://apps.apple.com/app/id414478124
-#!author = ld2j[https://github.com/LD2J0618],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!author = ld2j[https://github.com/LD2J0618],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],VirgilClyne
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weixin.png
 #!arguments=Proxy:你的策略组
 
