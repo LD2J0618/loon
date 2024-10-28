@@ -3,7 +3,8 @@
 #!openUrl = https://apps.apple.com/app/id414478124
 #!author = ld2j[https://github.com/LD2J0618]
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weixin.png
-#!arguments-desc=Proxy:  WeChat
+#!arguments=Proxy:
+#!arguments-desc=Proxy:  
 
 [host]
 # > 腾讯
