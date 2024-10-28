@@ -1,0 +1,95 @@
+#!name = WeChat增强
+#!desc = DNS分流，内置WeChat分流，广告过滤
+#!openUrl = https://apps.apple.com/app/id414478124
+#!author = ld2j[https://github.com/LD2J0618]
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weixin.png
+#!arguments=Proxy:你的策略组
+
+[host]
+# > 腾讯
+# refer: https://www.dnspod.cn/products/publicdns
+*.tencent.com = server:https://doh.pub/dns-query
+# QQ
+*.qq.com = server:https://doh.pub/dns-query
+# 腾讯头像
+*.qlogo.cn = server:https://doh.pub/dns-query
+# 腾讯图片
+*.qpic.cn = server:https://doh.pub/dns-query
+# 微信
+*.weixin.qq.com = server:https://doh.pub/dns-query
+*.wx.qq.com = server:https://doh.pub/dns-query
+*.weixin.com = server:https://doh.pub/dns-query
+# 微信公众平台
+*.weixinbridge.com = server:https://doh.pub/dns-query
+# WeChat
+*.wechat.com = server:https://doh.pub/dns-query
+# 微信小程序
+*.servicewechat.com = server:https://doh.pub/dns-query
+# 腾讯 图片 静态资源
+*.gtimg.cn = server:https://doh.pub/dns-query
+*.idqqimg.com = server:https://doh.pub/dns-query
+# 腾讯 静态资源 CDN
+*.cdn-go.cn = server:https://doh.pub/dns-query
+# 腾讯短网址
+url.cn = server:https://doh.pub/dns-query
+
+[Rule]
+# 屏蔽443端口
+AND,((DOMAIN-KEYWORD,wechat),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC))),(DEST-PORT,443)),REJECT
+# 广告过滤
+DOMAIN-SUFFIX, wxs.qq.com, REJECT
+# WeChatpay
+DOMAIN-KEYWORD,wechatpay,DIRECT
+DOMAIN,epay.ahrcu.com,DIRECT
+DOMAIN,mixpay.wechat.com,DIRECT  
+[Rule]
+# 使用参数中的 Proxy 策略组
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,{{{Proxy}}}
+DOMAIN,btrace.qq.com,{{{Proxy}}}
+DOMAIN,dldir1.qq.com,{{{Proxy}}}
+DOMAIN,slife.xy-asia.com,{{{Proxy}}}
+DOMAIN,soup.v.qq.com,{{{Proxy}}}
+DOMAIN,vweixinf.tc.qq.com,{{{Proxy}}}
+DOMAIN,weixin110.qq.com,{{{Proxy}}}
+DOMAIN,wup.imtt.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,iot-tencent.com,{{{Proxy}}}
+DOMAIN-SUFFIX,lbs.gtimg.com,{{{Proxy}}}
+DOMAIN-SUFFIX,map.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,qlogo.cn,{{{Proxy}}}
+DOMAIN-SUFFIX,qpic.cn,{{{Proxy}}}
+DOMAIN-SUFFIX,servicewechat.com,{{{Proxy}}}
+DOMAIN-SUFFIX,tenpay.com, DIRECT
+DOMAIN-SUFFIX,up-hl.3g.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,vweixinthumb.tc.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wechat.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wechatlegal.net,{{{Proxy}}}
+DOMAIN-SUFFIX,wechatos.net,{{{Proxy}}}
+DOMAIN-SUFFIX,weixin.com,{{{Proxy}}}
+DOMAIN-SUFFIX,weixin.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,weixinbridge.com,{{{Proxy}}}
+DOMAIN-SUFFIX,weixinsxy.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wx.gtimg.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wx.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wxapp.tc.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wxs.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,yun-hl.3g.qq.com,{{{Proxy}}}
+USER-AGENT,MicroMessenger*,{{{Proxy}}}
+USER-AGENT,WeChat*,{{{Proxy}}}
+IP-ASN,132203,{{{Proxy}}}, no-resolve
+
+# 微信小程序通用规则
+DOMAIN, wxsnsdy.wxs.qq.com, REJECT
+DOMAIN, wxsmsdy.video.qq.com, REJECT
+DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
+
+# 收钱吧广告
+DOMAIN, ads-shopping.shouqianba.com, REJECT
+
+
+[Rewrite]
+# 移除公众号中的推广内容 //mp.weixin.qq.com
+^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
+
+[MitM]
+hostname = mp.weixin.qq.com
