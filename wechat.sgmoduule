@@ -37,7 +37,7 @@ url.cn = server:https://doh.pub/dns-query
 
 [Rule]
 # 屏蔽443端口
-AND,((DOMAIN-KEYWORD,wechat),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC))),(DEST-PORT,443)),REJECT
+AND,((DOMAIN-KEYWORD,wechat),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC))),(DEST-PORT,443)),REJECT,pre-matching
 
 # 广告过滤
 DOMAIN-SUFFIX, wxs.qq.com, REJECT,extended-matching,pre-matching
