@@ -60,9 +60,9 @@ DOMAIN,e.jparking.cn,REJECT,extended-matching,pre-matching
 
 
 # WeChatpay
-DOMAIN-KEYWORD,wechatpay,DIRECT
-DOMAIN,epay.ahrcu.com,DIRECT
-DOMAIN,mixpay.wechat.com,DIRECT  
+DOMAIN-KEYWORD,wechatpay,DIRECT,no-resolve
+DOMAIN,epay.ahrcu.com,DIRECT,no-resolve
+DOMAIN,mixpay.wechat.com,DIRECT,no-resolve
 
 # 使用参数中的 Proxy 策略组
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,{{{Proxy}}}
@@ -95,7 +95,7 @@ DOMAIN-SUFFIX,wxapp.tc.qq.com,{{{Proxy}}}
 DOMAIN-SUFFIX,wxs.qq.com,{{{Proxy}}}
 DOMAIN-SUFFIX,yun-hl.3g.qq.com,{{{Proxy}}}
 USER-AGENT,MicroMessenger*,{{{Proxy}}}
-USER-AGENT,WeChat*,{{{Proxy}}}
+USER-AGENT,WeChat*,{{{Proxy}}},no-resolve
 IP-ASN,132203,{{{Proxy}}}, no-resolve
 
 [URL Rewrite]
