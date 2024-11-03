@@ -73,7 +73,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 
 [Rule]
 ##### www.hltv.org
-DOMAIN-SUFFIX,my.rtmark.net, {{{{{{Proxy}}}}}}
+DOMAIN-SUFFIX,my.rtmark.net, {{{Proxy}}}
 DOMAIN-SUFFIX,vntsm.com, {{{Proxy}}}
 DOMAIN-SUFFIX,pagead2.googlesyndication.com, {{{Proxy}}}
 
