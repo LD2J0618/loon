@@ -1,4 +1,4 @@
-# 个人自用emby服分流规则，他人请勿使用
+# 个人自用emby服分流规则，他人请勿使用，如看到请勿泄露
 # 收束世界线 emby
 DOMAIN-SUFFIX,worldline.space
 #琴鸟 emby
@@ -11,9 +11,15 @@ DOMAIN-SUFFIX,auroramedia.vip
 DOMAIN-SUFFIX,583765.xyz
 # 鹅服emby
 DOMAIN-SUFFIX,eu.org
+IP-CIDR,154.29.145.151/32,no-resolve
 # 好鸭emby
 DOMAIN-SUFFIX,niceduck.lol
 # micu emby
 DOMAIN-SUFFIX,micu.hk
 # 蘑菇 emby
 DOMAIN-SUFFIX,yeahfast.com
+# 探花TV emby
+DOMAIN-SUFFIX,tanhuatv.site
+# Temby
+DOMAIN-SUFFIX,516516.xyz
+DOMAIN-SUFFIX,285286.xyz
