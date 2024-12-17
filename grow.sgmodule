@@ -1,13 +1,13 @@
-#!name = Grow解锁
-#!desc = 点击恢复购买即可解锁订阅
-#!openUrl = 
-#!author = I-am-R-E
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Plugin
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Grow.png
+#!name=Grow解锁
+#!desc=点击恢复购买即可解锁订阅
+#!author=I-am-R-E
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Grow.png
+#!homepage=https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Plugin
 
 [Script]
-http-response ^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/(\$RCAnonymousID\%)?(\w)+$ script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Grow/Grow_crack.js, requires-body=true, tag=Grow解锁
-http-response ^https?:\/\/api\.revenuecat\.com\/v\d\/receipts$ script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Grow/Grow_crack.js, requires-body=true, tag=Grow解锁
+Grow解锁 = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/(\$RCAnonymousID\%)?(\w)+$, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Grow/Grow_crack.js, requires-body=true
+
+Grow解锁 = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/v\d\/receipts$, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Grow/Grow_crack.js, requires-body=true
 
 [MITM]
-hostname = api.revenuecat.com
+hostname = %APPEND% api.revenuecat.com
